@@ -29,4 +29,6 @@ uint8_t alu_or(uint8_t A, uint8_t B, uint8_t *flags);
 uint8_t alu_xor(uint8_t A, uint8_t B, uint8_t *flags);
 uint8_t alu_not(uint8_t A, uint8_t *flags);
 
+uint8_t memory_read(uint16_t adresa, CPU *c);
+void memory_write(uint16_t adresa, uint8_t valoare, CPU *c);
 #endif
