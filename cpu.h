@@ -21,4 +21,12 @@ void cpu_run(CPU *cpu);
 void cpu_step(CPU *cpu);
 void cpu_dump(CPU *cpu);
 
+uint8_t alu_add(uint8_t A, uint8_t B, uint8_t *flags);
+uint8_t alu_sub(uint8_t A, uint8_t B, uint8_t *flags);
+void alu_cmp(uint8_t A, uint8_t B, uint8_t *flags);
+uint8_t alu_and(uint8_t A, uint8_t B, uint8_t *flags);
+uint8_t alu_or(uint8_t A, uint8_t B, uint8_t *flags);
+uint8_t alu_xor(uint8_t A, uint8_t B, uint8_t *flags);
+uint8_t alu_not(uint8_t A, uint8_t *flags);
+
 #endif

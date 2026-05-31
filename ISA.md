@@ -10,3 +10,7 @@ Lista instructiuni:
 0x08 - JZ // Salt daca Z este setat // Sintaxa: JZ x; Salt la eticheta x daca Z este seteat
 0x09 -JNZ // Salt daca Z nu este setat // Sintaxa: JNZ x; Salt la eticheta x daca Z nu este setat
 0x0A - PRINT // Afiseaza registrul // Sintaxa: PRINT A; afiseaza valoarea registrului A
+0x0B - AND // Returneaza rezultatul operatiei pe biti AND dintre 2 registrii // Sintaxa: AND A, B; primul registru fiind destinatia
+0x0C - OR // Returneaza rezultatul operatiei pe biti OR dintre 2 registrii // Sintaxa: OR A, B; primul registru fiind destinatia
+0x0D - XOR // Returneaza rezultatul operatiei pe biti XOR dintre 2 registrii // Sintaxa: XOR A, B; primul registru fiind destinatia
+0x0E - NOT // Returneaza rezultatul operatiei pe biti NOT a unui registru // Sintaxa NOT A; registrul este si destinatia
