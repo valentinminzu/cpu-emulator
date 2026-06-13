@@ -3,10 +3,7 @@
 #include <stdio.h>
 
 void cpu_init(CPU *cpu) {
-    cpu->A = 0;
-    cpu->B = 0;
-    cpu->C = 0;
-    cpu->D = 0;
+    memset(cpu->registre,0,sizeof(cpu->registre));
     cpu->flags = 0;
     cpu->PC = 0;
     cpu->SP = 0;
@@ -14,10 +11,10 @@ void cpu_init(CPU *cpu) {
 }
 
 void cpu_dump(CPU *cpu) {
-    printf("A = %u\n", cpu->A);
-    printf("B = %u\n", cpu->B);
-    printf("C = %u\n", cpu->C);
-    printf("D = %u\n", cpu->D);
+    char *nume[] = {"A", "B", "C", "D"};
+    for (int i = 0; i < 4; i++) {
+        printf("%s = %u\n",nume[i],cpu->registre[i]);
+    }
     printf("PC = %u\n", cpu->PC);
     printf("SP = %u\n", cpu->SP);
     printf("flags = %u\n", cpu->flags);
@@ -32,6 +29,28 @@ void cpu_dump(CPU *cpu) {
             printf("\n");
             biti = 0;
             contor = contor + 8;
+        }
+    }
+}
+
+void cpu_step(CPU *cpu) {
+    uint8_t opcode;
+
+    opcode = memory_read(cpu->PC, cpu);
+    cpu->PC++;
+
+    switch(opcode) {
+        case 0x01: { //MOV
+
+            uint8_t destinatie = memory_read(cpu->PC, cpu);
+            cpu->PC++;
+            uint8_t sursa = memory_read(cpu->PC,cpu);
+            cpu->PC++;
+
+            break;
+        }
+        case 0x02: {
+
         }
     }
 }

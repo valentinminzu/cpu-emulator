@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 typedef struct {
-    uint8_t A, B, C, D; // registri generali
+    uint8_t registre[4]; // registri generali
     uint16_t PC; // program counter
     uint16_t SP; // stack pointer
     uint8_t flags; // flag-uri

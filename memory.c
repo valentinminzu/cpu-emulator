@@ -1,4 +1,5 @@
 #include "cpu.h"
+#include <stdio.h>
 
 uint8_t memory_read(uint16_t adresa, CPU *c) {
     if(adresa > 255) {

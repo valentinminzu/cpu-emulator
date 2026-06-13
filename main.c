@@ -7,7 +7,7 @@ int main(void) {
     
     cpu_init(c);
     
-    c->A = 42;
+    c->registre[0] = 42;
     c->memory[0] = 0xFF;
     c->memory[1] = 0xAB;
     
@@ -16,7 +16,7 @@ int main(void) {
     
     uint8_t citire;
     citire = memory_read(15,c);
-    printf("adresa 15: %d",citire);
+    printf("adresa 15: %d\n",citire);
     
     cpu_dump(c);
     
