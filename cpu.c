@@ -41,16 +41,23 @@ void cpu_step(CPU *cpu) {
 
     switch(opcode) {
         case 0x01: { //MOV
-
             uint8_t destinatie = memory_read(cpu->PC, cpu);
             cpu->PC++;
             uint8_t sursa = memory_read(cpu->PC,cpu);
             cpu->PC++;
-
+            cpu->registre[destinatie] = cpu->registre[sursa];
             break;
         }
-        case 0x02: {
-
+        case 0x02: { //ADD
+            uint8_t destinatie = memory_read(cpu->PC, cpu);
+            cpu->PC++;
+            uint8_t sursa = memory_read(cpu->PC,cpu);
+            cpu->PC++;
+            cpu->registre[destinatie] = alu_add(cpu->registre[destinatie], cpu->registre[sursa], &cpu->flags);
+            break;
+        }
+        case 0x03: {
+            //
         }
     }
 }
